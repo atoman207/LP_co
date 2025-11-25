@@ -405,7 +405,16 @@ body {
 }
 
 .hero-cta-mobile {
-    display: none;
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .hero-cta-mobile {
+        display: inline-block !important;
+    }
+    .hero-cta-desktop {
+        display: none !important;
+    }
 }
 
 
