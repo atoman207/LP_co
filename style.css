@@ -453,59 +453,57 @@ body {
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 18px 40px;
-    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 45px 18px 25px;
+    background: linear-gradient(180deg, #4ECDC4 0%, #3BB8B0 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
     font-size: clamp(16px, 2vw, 20px);
-    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.4), var(--shadow-medium);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 #2A9D8F, 0 6px 15px rgba(78, 205, 196, 0.3);
+    transition: all 0.2s ease;
     position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: glow-pulse 2s ease-in-out infinite;
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    border: none;
+}
+
+.cta-button::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .cta-button::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-shine);
-    border-radius: 50px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.cta-button:hover::after {
-    opacity: 1;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-}
-
-.cta-button:hover::before {
-    left: 100%;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid var(--white);
+    margin-left: 2px;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(231, 76, 60, 0.6);
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #2A9D8F, 0 4px 10px rgba(78, 205, 196, 0.3);
+}
+
+.cta-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #2A9D8F, 0 2px 5px rgba(78, 205, 196, 0.3);
 }
 
 /* 右下固定CTAボタン */
@@ -514,16 +512,15 @@ body {
     bottom: 20px;
     right: 20px;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    background: linear-gradient(180deg, #4ECDC4 0%, #3BB8B0 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
     font-size: clamp(14px, 1.8vw, 18px);
-    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5), 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    box-shadow: 0 4px 0 #2A9D8F, 0 6px 15px rgba(78, 205, 196, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 9999;
-    border: 1px solid rgba(255, 255, 255, 0.3);
     display: none;
     align-items: center;
     white-space: nowrap;
@@ -539,24 +536,8 @@ body {
 }
 
 .fixed-cta-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 40px rgba(231, 76, 60, 0.6), 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.fixed-cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-    border-radius: 50px;
-}
-
-.fixed-cta-button:hover::before {
-    left: 100%;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #2A9D8F, 0 4px 10px rgba(78, 205, 196, 0.3);
 }
 
 
@@ -1235,41 +1216,14 @@ body {
    セクション⑥：お客様の声
    ============================================ */
 .reviews {
-    padding: 100px 0;
-    background: var(--white);
+    padding: 70px 0;
+    background: #FDEEF2;
     position: relative;
 }
 
-/* 透明感・海泡の装飾 */
-.reviews::before {
-    content: '';
-    position: absolute;
-    top: 50px;
-    right: 10%;
-    width: 250px;
-    height: 250px;
-    background: 
-        radial-gradient(circle, rgba(184, 225, 230, 0.15) 0%, transparent 70%),
-        radial-gradient(ellipse at 40% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    border-radius: 50%;
-    filter: blur(40px);
-}
-
-.reviews::after {
-    content: '';
-    position: absolute;
-    bottom: 30px;
-    left: 15%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(184, 225, 230, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(35px);
-}
-
 .reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 0;
     margin-top: 40px;
 }
@@ -1278,44 +1232,6 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.review-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(184, 225, 230, 0.3);
-}
-
-.review-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.6s;
-    z-index: 1;
-}
-
-.review-img:hover::before {
-    left: 100%;
-}
-
-.review-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    letter-spacing: 0.02em;
-}
-
-.review-author {
-    font-size: 14px;
-    color: var(--text-light);
-    text-align: right;
 }
 
 /* ============================================
