@@ -218,38 +218,19 @@ const optimizedScrollHandler = debounce(() => {
 window.addEventListener('scroll', optimizedScrollHandler);
 
 // ============================================
-// 固定CTAボタンの表示/非表示制御（ヒーローセクションでは非表示）
+// 固定CTAボタン（常に表示）
 // ============================================
-function toggleFixedCTA() {
+function initFixedCTA() {
     const fixedCTA = document.querySelector('.fixed-cta-button');
-    const heroSection = document.querySelector('#hero');
-    
-    if (!fixedCTA || !heroSection) return;
-    
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const scrollPosition = window.pageYOffset;
-    
-    // ヒーローセクション内にいる場合は非表示、それ以外は表示
-    if (scrollPosition < heroBottom - 100) {
-        fixedCTA.classList.remove('show');
-    } else {
-        fixedCTA.classList.add('show');
+    if (fixedCTA) {
+        // CTAボタンは常に表示
+        fixedCTA.style.display = 'flex';
     }
 }
 
-// スクロール時に固定CTAボタンの表示を制御
-window.addEventListener('scroll', () => {
-    toggleFixedCTA();
-});
-
-// ページ読み込み時にもチェック
+// ページ読み込み時にCTAを初期化
 window.addEventListener('load', () => {
-    toggleFixedCTA();
-});
-
-// リサイズ時にもチェック
-window.addEventListener('resize', () => {
-    toggleFixedCTA();
+    initFixedCTA();
 });
 
 // ============================================
