@@ -308,36 +308,7 @@ body {
     align-items: center;
     justify-content: center;  
     overflow: hidden;
-    padding: 80px 0;
-    background: linear-gradient(135deg, #B8E1E6 0%, #E0F4F7 50%, #F0E6FF 100%);
-    background-size: 200% 200%;
-    animation: gradient-wave 15s ease infinite;
-}
-
-/* 水滴エフェクト */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 200px 200px, 150px 150px, 180px 180px, 160px 160px;
-    background-position: 0 0, 50px 50px, 100px 100px, 150px 150px;
-    opacity: 1;
-    z-index: 0;
-}
-
-
-/* 海泡エフェクト */
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
+    padding: 60px 20px 100px;
 }
 
 
@@ -348,6 +319,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero-bg-image {
@@ -357,27 +329,43 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
-    
+    opacity: 1;
     z-index: 0;
 }
 
+/* Lavender flower petals scattered throughout */
 .lavender-flower {
     position: absolute;
     width: 60px;
-    height: auto;
-    opacity: 1;
+    height: 80px;
+    opacity: 0.9;
+    z-index: 2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 100'%3E%3Cg fill='none'%3E%3C!-- Lavender stem --%3E%3Cpath d='M30 55 L30 95' stroke='%236B8E4E' stroke-width='3' stroke-linecap='round'/%3E%3C!-- Small leaf --%3E%3Cellipse cx='24' cy='75' rx='8' ry='4' fill='%237BA05B' transform='rotate(-40 24 75)'/%3E%3Cellipse cx='36' cy='82' rx='7' ry='3.5' fill='%237BA05B' transform='rotate(35 36 82)'/%3E%3C!-- Lavender buds --%3E%3Cellipse cx='30' cy='8' rx='5' ry='7' fill='%239370DB'/%3E%3Cellipse cx='24' cy='15' rx='5' ry='6' fill='%239B7BB8'/%3E%3Cellipse cx='36' cy='15' rx='5' ry='6' fill='%239B7BB8'/%3E%3Cellipse cx='22' cy='24' rx='4.5' ry='6' fill='%23A888C4'/%3E%3Cellipse cx='38' cy='24' rx='4.5' ry='6' fill='%23A888C4'/%3E%3Cellipse cx='25' cy='33' rx='4' ry='5.5' fill='%23B898D4'/%3E%3Cellipse cx='35' cy='33' rx='4' ry='5.5' fill='%23B898D4'/%3E%3Cellipse cx='28' cy='42' rx='3.5' ry='5' fill='%23C8A8E4'/%3E%3Cellipse cx='32' cy='42' rx='3.5' ry='5' fill='%23C8A8E4'/%3E%3Cellipse cx='30' cy='50' rx='3' ry='4' fill='%23D4B8F0'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 4px 6px rgba(147, 112, 219, 0.2));
+    animation: lavender-sway 6s ease-in-out infinite;
 }
 
-.lavender-flower:nth-child(1) { top: 20%; left: 10%; }
-.lavender-flower:nth-child(2) { top: 60%; left: 80%; }
-.lavender-flower:nth-child(3) { top: 80%; left: 30%; }
+@keyframes lavender-sway {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(3deg) translateY(-5px); }
+}
+
+/* Scattered positions - around edges, not blocking center */
+.lavender-flower:nth-child(2) { top: 5%; left: 3%; width: 50px; height: 70px; animation-delay: 0s; }
+.lavender-flower:nth-child(3) { top: 8%; right: 5%; left: auto; width: 55px; height: 75px; animation-delay: 0.8s; transform: rotate(10deg); }
+.lavender-flower:nth-child(4) { top: 25%; left: 2%; width: 45px; height: 60px; animation-delay: 1.5s; }
+.lavender-flower:nth-child(5) { top: 30%; right: 3%; left: auto; width: 50px; height: 68px; animation-delay: 2s; transform: rotate(-5deg); }
+.lavender-flower:nth-child(6) { top: 50%; left: 4%; width: 40px; height: 55px; animation-delay: 2.5s; }
+.lavender-flower:nth-child(7) { top: 55%; right: 4%; left: auto; width: 48px; height: 65px; animation-delay: 3s; }
+.lavender-flower:nth-child(8) { top: 72%; left: 6%; width: 52px; height: 70px; animation-delay: 3.5s; transform: rotate(8deg); }
+.lavender-flower:nth-child(9) { top: 75%; right: 6%; left: auto; width: 44px; height: 60px; animation-delay: 4s; transform: rotate(-8deg); }
+.lavender-flower:nth-child(10) { bottom: 8%; left: 15%; top: auto; width: 46px; height: 62px; animation-delay: 4.5s; }
+.lavender-flower:nth-child(11) { bottom: 10%; right: 12%; left: auto; top: auto; width: 42px; height: 58px; animation-delay: 5s; }
 
 .steam-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
+    display: none;
 }
 
 
@@ -393,12 +381,34 @@ body {
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Product image centered */
+.hero-content .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content .hero-text {
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        gap: 30px;
+    }
 }
 
 .hero-cta-desktop {
@@ -509,57 +519,84 @@ body {
 /* 右下固定CTAボタン */
 .fixed-cta-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 15px 30px;
-    background: linear-gradient(180deg, #4ECDC4 0%, #3BB8B0 100%);
+    bottom: 30px;
+    right: 30px;
+    padding: 16px 30px;
+    background: linear-gradient(180deg, #9B7BB8 0%, #7B5A9E 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: clamp(14px, 1.8vw, 18px);
-    box-shadow: 0 4px 0 #2A9D8F, 0 6px 15px rgba(78, 205, 196, 0.3);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 9999;
-    display: none;
+    font-size: clamp(14px, 1.8vw, 16px);
+    box-shadow: 0 4px 15px rgba(155, 123, 184, 0.4);
+    transition: all 0.3s ease;
+    z-index: 10000;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
     white-space: nowrap;
-    opacity: 0;
-    transform: translateY(20px);
-    max-width: calc(100vw - 40px);
+    opacity: 1;
+    max-width: calc(100vw - 60px);
+    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
 }
 
-.fixed-cta-button.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
+.fixed-cta-button::after {
+    content: '▶';
+    font-size: 10px;
+    margin-left: 3px;
 }
 
 .fixed-cta-button:hover {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 #2A9D8F, 0 4px 10px rgba(78, 205, 196, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(155, 123, 184, 0.5);
+    background: linear-gradient(180deg, #A888C4 0%, #8766AA 100%);
+}
+
+.fixed-cta-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #5C3D7A, 0 2px 8px rgba(155, 123, 184, 0.3);
+}
+
+@media (max-width: 768px) {
+    .fixed-cta-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 25px;
+        font-size: 14px;
+    }
 }
 
 
 .hero-image {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
 }
 
 .product-image {
     width: 100%;
-    max-width: 245px;
+    max-width: 300px;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 30px 60px rgba(147, 112, 219, 0.3));
     position: relative;
     z-index: 2;
-    transform: rotate(40deg);
     object-fit: contain;
     transition: all 0.5s ease;
+    animation: product-float 5s ease-in-out infinite;
+}
+
+@keyframes product-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 .product-image:hover {
-    filter: drop-shadow(0 30px 60px rgba(235, 214, 160, 0.5));
-    transform: rotate(40deg) scale(1.05);
+    filter: drop-shadow(0 40px 80px rgba(147, 112, 219, 0.45));
+    transform: translateY(-8px) scale(1.03);
 }
 
 .product-gel {
@@ -576,18 +613,30 @@ body {
 
 
 .gel-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: 
-        radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(184, 225, 230, 0.3) 50%, transparent 70%),
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5) 0%, transparent 40%);
-    border-radius: 50%;
-    filter: blur(20px);
-    animation: glow-pulse 4s ease-in-out infinite;
+    display: none;
+}
+
+@keyframes melting-gel {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1); 
+        border-radius: 45% 55% 60% 40% / 40% 50% 55% 45%;
+    }
+}
+
+/* Dripping gel drops below product */
+.gel-drip {
+    display: none;
+}
+
+@keyframes gel-drip-anim {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0) scaleY(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateX(-50%) translateY(8px) scaleY(1.1); 
+        opacity: 1; 
+    }
 }
 
 /* 光沢エフェクト */
