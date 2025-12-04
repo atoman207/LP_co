@@ -6,55 +6,51 @@
     <title>パラオホットクレンジングジェル | 温感×吸着×美白特許×コラーゲン</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- セクション①：ファーストビュー -->
     <section class="hero" id="hero">
-        <div class="hero-background">
-            <img src="image/s1_bg.png" alt="" class="hero-bg-image" aria-hidden="true">
-            
-            <!-- Steam/mist effect -->
-            <div class="steam-effect"></div>
-            
-            <!-- Scattered lavender flowers -->
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
-            <div class="lavender-flower" aria-hidden="true"></div>
+        <!-- Canvas for particles (keep if you want the subtle effect, otherwise remove) -->
+        <canvas id="hero-canvas"></canvas>
+        
+        <div class="hero-content">
+            <!-- Left Side: Product Tube -->
+            <div class="hero-left">
+                <img src="image/s1_main.png" alt="パラオホットクレンジングジェル" class="hero-product-image">
+            </div>
 
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <!-- <p class="hero-tagline">美白特許取得｜温感×吸着×コラーゲン</p> -->
-                    <h1 class="hero-headline">                       
-                        <span class="hero-main">毛穴の奥まで<br>"とろける美容クレンジング"</span>
-                    </h1>
-                    <p class="hero-subcopy">
-                        天然ラベンダーアロマの香りに包まれて、<br class="sp-only">肌も心もほぐれる。<br>
-                        洗うたび、ハリと透明感があふれ出す<br class="sp-only">贅沢な温感クレンジングジェル。
-                    </p>
-                    <a href="#pricing" class="cta-button hero-cta hero-cta-desktop">
-                        初回限定 500円OFF で試す
-                    </a>
+            <!-- Right Side: Text Content in Layers -->
+            <div class="hero-right">
+                <!-- Layer 1: Product Name (small, top) -->
+                <span class="hero-brand">パラオホットクレンジングジェル</span>
+                
+                <!-- Layer 2: Main Headline (BIG) -->
+                <h1 class="hero-headline">
+                    毛穴の奥まで届く、<br>
+                    <span class="hero-headline-accent">とろける美容液クレンジング</span>
+                </h1>
+                
+                <!-- Layer 3: Keywords (badges) -->
+                <div class="hero-keywords">
+                    <span>温感</span>
+                    <span>吸着</span>
+                    <span>美白特許</span>
+                    <span>コラーゲン</span>
                 </div>
-                <div class="hero-image">
-                    <img src="image/s1_main.png" alt="パラオホットクレンジングジェル" class="product-image">
-                    <div class="gel-effect"></div>
-                    <div class="gel-drip"></div>
-                </div>
-                <a href="#pricing" class="cta-button hero-cta hero-cta-mobile">
-                    初回限定 500円OFF で試す
-                </a>
-
+                
+                <!-- Layer 4: Tagline -->
+                <p class="hero-tagline">汚れを溶かし、光を纏う。極上の温感クレンジング</p>
+                
+                <!-- Layer 5: Description -->
+                <p class="hero-description">
+                    天然ラベンダーアロマの香りに包まれて、肌も心もほぐれる。<br>
+                    洗うたび、ハリと透明感があふれ出す。
+                </p>
+                
+                <!-- Layer 6: CTA Button -->
+                <a href="#pricing" class="hero-cta">初回限定でお得に試す</a>
             </div>
         </div>
     </section>
@@ -102,21 +98,21 @@
             </p>
             <div class="origin-gallery">
                 <div class="origin-main-image">
-                    <img src="image/Palau111121-24/P1000561.JPG" alt="パラオの美しいエメラルドグリーンの海" class="gallery-main">
+                    <img src="image/nature/P1000561.JPG" alt="パラオの美しいエメラルドグリーンの海" class="gallery-main">
                     <div class="origin-badge">世界遺産の海</div>
                 </div>
                 <div class="origin-sub-images">
                     <div class="origin-sub-item">
-                        <img src="image/Palau111121-24/P1000540.JPG" alt="パラオの透明な海" class="gallery-sub">
+                        <img src="image/nature/P1000540.JPG" alt="パラオの透明な海" class="gallery-sub">
                     </div>
                     <div class="origin-sub-item">
-                        <img src="image/Palau111121-24/P1000536.JPG" alt="パラオの自然" class="gallery-sub">
+                        <img src="image/nature/P1000536.JPG" alt="パラオの自然" class="gallery-sub">
                     </div>
                     <div class="origin-sub-item">
-                        <img src="image/Palau111121-24/P1000515.JPG" alt="パラオの海岸" class="gallery-sub">
+                        <img src="image/nature/P1000515.JPG" alt="パラオの海岸" class="gallery-sub">
                     </div>
                     <div class="origin-sub-item">
-                        <img src="image/Palau111121-24/P1000467.JPG" alt="パラオの風景" class="gallery-sub">
+                        <img src="image/nature/P1000467.JPG" alt="パラオの風景" class="gallery-sub">
                     </div>
                 </div>
             </div>
@@ -155,15 +151,15 @@
             <!-- 成分イメージギャラリー -->
             <div class="ingredient-gallery">
                 <div class="ingredient-item">
-                    <img src="image/2011.11.21-9583/P1000131.JPG" alt="天然クレイ成分" class="ingredient-img">
+                    <img src="image/beauty/P1000131.JPG" alt="天然クレイ成分" class="ingredient-img">
                     <span class="ingredient-label">天然ホワイトクレイ</span>
                 </div>
                 <div class="ingredient-item">
-                    <img src="image/2011.11.21-9583/P1000150.JPG" alt="ラベンダー精油" class="ingredient-img">
+                    <img src="image/beauty/P1000150.JPG" alt="ラベンダー精油" class="ingredient-img">
                     <span class="ingredient-label">天然ラベンダー精油</span>
                 </div>
                 <div class="ingredient-item">
-                    <img src="image/2011.11.21-9583/P1000165.JPG" alt="コラーゲン成分" class="ingredient-img">
+                    <img src="image/beauty/P1000165.JPG" alt="コラーゲン成分" class="ingredient-img">
                     <span class="ingredient-label">コラーゲン</span>
                 </div>
             </div>
@@ -173,7 +169,7 @@
     <!-- セクション④：癒しの温感×天然ラベンダー -->
     <section class="relaxation" id="relaxation">
         <div class="relaxation-background">
-            <img src="image/Palau111121-24/P1000542.JPG" alt="" class="lavender-bg" aria-hidden="true">
+            <img src="image/nature/P1000542.JPG" alt="" class="lavender-bg" aria-hidden="true">
             <div class="lavender-field"></div>
             <div class="steam-gentle"></div>
         </div>
@@ -203,19 +199,19 @@
                 <h3 class="spa-gallery-title">極上のスパ体験を自宅で</h3>
                 <div class="spa-gallery-grid">
                     <div class="spa-item spa-item-large">
-                        <img src="image/2011.11.21-9583/IMG_5463.JPG" alt="スパトリートメント" class="spa-img">
+                        <img src="image/beauty/IMG_5463.JPG" alt="スパトリートメント" class="spa-img">
                     </div>
                     <div class="spa-item">
-                        <img src="image/2011.11.21-9583/IMG_5475.JPG" alt="フェイシャルケア" class="spa-img">
+                        <img src="image/beauty/IMG_5475.JPG" alt="フェイシャルケア" class="spa-img">
                     </div>
                     <div class="spa-item">
-                        <img src="image/2011.11.21-9583/IMG_5494.JPG" alt="リラクゼーション" class="spa-img">
+                        <img src="image/beauty/IMG_5494.JPG" alt="リラクゼーション" class="spa-img">
                     </div>
                     <div class="spa-item">
-                        <img src="image/2011.11.21-9583/IMG_5501.JPG" alt="美容ケア" class="spa-img">
+                        <img src="image/beauty/IMG_5501.JPG" alt="美容ケア" class="spa-img">
                     </div>
                     <div class="spa-item">
-                        <img src="image/2011.11.21-9583/IMG_5508.JPG" alt="トリートメント" class="spa-img">
+                        <img src="image/beauty/IMG_5508.JPG" alt="トリートメント" class="spa-img">
                     </div>
                 </div>
             </div>
@@ -273,21 +269,21 @@
                     <div class="usage-step">
                         <div class="step-number">1</div>
                         <div class="step-image">
-                            <img src="image/2011.11.21-9583/IMG_5419.JPG" alt="ステップ1：適量を手に取る" class="step-img">
+                            <img src="image/beauty/IMG_5419.JPG" alt="ステップ1：適量を手に取る" class="step-img">
                         </div>
                         <p class="step-text">適量を手に取り、<br>顔全体に優しくなじませる</p>
                     </div>
                     <div class="usage-step">
                         <div class="step-number">2</div>
                         <div class="step-image">
-                            <img src="image/2011.11.21-9583/IMG_5435.JPG" alt="ステップ2：マッサージ" class="step-img">
+                            <img src="image/beauty/IMG_5435.JPG" alt="ステップ2：マッサージ" class="step-img">
                         </div>
                         <p class="step-text">温感を感じながら<br>円を描くようにマッサージ</p>
                     </div>
                     <div class="usage-step">
                         <div class="step-number">3</div>
                         <div class="step-image">
-                            <img src="image/2011.11.21-9583/IMG_5446.JPG" alt="ステップ3：洗い流す" class="step-img">
+                            <img src="image/beauty/IMG_5446.JPG" alt="ステップ3：洗い流す" class="step-img">
                         </div>
                         <p class="step-text">ぬるま湯で<br>優しく洗い流す</p>
                     </div>
@@ -305,34 +301,34 @@
             </h2>
             <div class="lifestyle-grid">
                 <div class="lifestyle-item lifestyle-large">
-                    <img src="image/2011.11.21-9583/IMG_5514.JPG" alt="美肌ケア" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5514.JPG" alt="美肌ケア" class="lifestyle-img">
                     <div class="lifestyle-overlay">
                         <span class="lifestyle-tag">透明感のある素肌へ</span>
                     </div>
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5521.JPG" alt="スキンケア" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5521.JPG" alt="スキンケア" class="lifestyle-img">
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5522.JPG" alt="クレンジング" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5522.JPG" alt="クレンジング" class="lifestyle-img">
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5534.JPG" alt="美容ケア" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5534.JPG" alt="美容ケア" class="lifestyle-img">
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5537.JPG" alt="フェイシャル" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5537.JPG" alt="フェイシャル" class="lifestyle-img">
                 </div>
                 <div class="lifestyle-item lifestyle-wide">
-                    <img src="image/2011.11.21-9583/IMG_5579.JPG" alt="リラクゼーション" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5579.JPG" alt="リラクゼーション" class="lifestyle-img">
                     <div class="lifestyle-overlay">
                         <span class="lifestyle-tag">心地よいリラクゼーション</span>
                     </div>
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5583.JPG" alt="美肌" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5583.JPG" alt="美肌" class="lifestyle-img">
                 </div>
                 <div class="lifestyle-item">
-                    <img src="image/2011.11.21-9583/IMG_5594.JPG" alt="素肌ケア" class="lifestyle-img">
+                    <img src="image/beauty/IMG_5594.JPG" alt="素肌ケア" class="lifestyle-img">
                 </div>
             </div>
         </div>
@@ -511,16 +507,16 @@
             <!-- 製品品質ギャラリー -->
             <div class="quality-gallery">
                 <div class="quality-item">
-                    <img src="image/2011.11.21-9583/P1000103.JPG" alt="製品品質" class="quality-img">
+                    <img src="image/beauty/P1000103.JPG" alt="製品品質" class="quality-img">
                 </div>
                 <div class="quality-item">
-                    <img src="image/2011.11.21-9583/P1000113.JPG" alt="品質管理" class="quality-img">
+                    <img src="image/beauty/P1000113.JPG" alt="品質管理" class="quality-img">
                 </div>
                 <div class="quality-item">
-                    <img src="image/2011.11.21-9583/P1000117.JPG" alt="厳選素材" class="quality-img">
+                    <img src="image/beauty/P1000117.JPG" alt="厳選素材" class="quality-img">
                 </div>
                 <div class="quality-item">
-                    <img src="image/2011.11.21-9583/P1000124.JPG" alt="安心品質" class="quality-img">
+                    <img src="image/beauty/P1000124.JPG" alt="安心品質" class="quality-img">
                 </div>
             </div>
         </div>
@@ -534,26 +530,20 @@
             </h2>
             <div class="showcase-gallery">
                 <div class="showcase-main">
-                    <img src="image/2011.11.21-9583/P1000280.JPG" alt="パラオホットクレンジングジェル メイン" class="showcase-main-img">
+                    <img src="image/beauty/P1000280.JPG" alt="パラオホットクレンジングジェル メイン" class="showcase-main-img">
                 </div>
-                <div class="showcase-grid">
+                <div class="showcase-grid" style="justify-content: center;">
                     <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000287.JPG" alt="製品詳細1" class="showcase-img">
+                        <img src="image/beauty/P1000287.JPG" alt="製品詳細1" class="showcase-img">
                     </div>
                     <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000292.JPG" alt="製品詳細2" class="showcase-img">
+                        <img src="image/beauty/P1000292.JPG" alt="製品詳細2" class="showcase-img">
                     </div>
                     <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000300.JPG" alt="製品詳細3" class="showcase-img">
+                        <img src="image/beauty/P1000300.JPG" alt="製品詳細3" class="showcase-img">
                     </div>
                     <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000304.JPG" alt="製品詳細4" class="showcase-img">
-                    </div>
-                    <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000309.JPG" alt="製品詳細5" class="showcase-img">
-                    </div>
-                    <div class="showcase-item">
-                        <img src="image/2011.11.21-9583/P1000329.JPG" alt="製品詳細6" class="showcase-img">
+                        <img src="image/beauty/P1000304.JPG" alt="製品詳細4" class="showcase-img">
                     </div>
                 </div>
             </div>
@@ -573,27 +563,27 @@
             <div class="journey-gallery">
                 <div class="journey-row">
                     <div class="journey-item journey-item-1">
-                        <img src="image/Palau111121-24/P1000454.JPG" alt="パラオの海" class="journey-img">
+                        <img src="image/nature/P1000561.JPG" alt="パラオの海" class="journey-img">
                         <div class="journey-label">パラオの海</div>
                     </div>
                     <div class="journey-arrow">→</div>
                     <div class="journey-item journey-item-2">
-                        <img src="image/Palau111121-24/P1000449.JPG" alt="天然クレイ" class="journey-img">
+                        <img src="image/nature/P1000540.JPG" alt="天然クレイ" class="journey-img">
                         <div class="journey-label">天然ホワイトクレイ</div>
                     </div>
                     <div class="journey-arrow">→</div>
                     <div class="journey-item journey-item-3">
-                        <img src="image/Palau111121-24/P1000438.JPG" alt="厳選素材" class="journey-img">
+                        <img src="image/nature/P1000467.JPG" alt="厳選素材" class="journey-img">
                         <div class="journey-label">厳選された素材</div>
                     </div>
                     <div class="journey-arrow">→</div>
                     <div class="journey-item journey-item-4">
-                        <img src="image/2011.11.21-9583/P1000336.JPG" alt="製品へ" class="journey-img">
+                        <img src="image/beauty/P1000280.JPG" alt="製品へ" class="journey-img">
                         <div class="journey-label">製品へ</div>
                     </div>
                     <div class="journey-arrow">→</div>
                     <div class="journey-item journey-item-5">
-                        <img src="image/2011.11.21-9583/IMG_5598.JPG" alt="美しい肌へ" class="journey-img">
+                        <img src="image/beauty/P1000287.JPG" alt="美しい肌へ" class="journey-img">
                         <div class="journey-label">美しい肌へ</div>
                     </div>
                 </div>
@@ -609,8 +599,8 @@
     <!-- セクション⑨：フッター導線 -->
     <footer class="footer" id="footer">
         <div class="footer-background">
-            <img src="image/Palau111121-24/P1000561.JPG" alt="" class="ocean-bg" aria-hidden="true">
-            <img src="image/Palau111121-24/P1000540.JPG" alt="" class="ocean-overlay" aria-hidden="true">
+            <img src="image/nature/P1000561.JPG" alt="" class="ocean-bg" aria-hidden="true">
+            <img src="image/nature/P1000540.JPG" alt="" class="ocean-overlay" aria-hidden="true">
             <div class="ocean-horizon"></div>
         </div>
         <div class="container">
